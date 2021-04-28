@@ -24,5 +24,27 @@ namespace SimplyRugby
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            string username = txtUsername.Text, password = txtPassword.Password;
+
+            if(username == "Admin" && password == "securepassword123")
+            {
+                AdminScreen adminScreen = new AdminScreen();
+                adminScreen.Show();
+                this.Close();
+            }
+            else if (username == "Coach" && password == "coachpassword123")
+            {
+                CoachScreen coachScreen = new CoachScreen();
+                coachScreen.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("You have entered an incorrect Username and/or Password!");
+            }
+        }
     }
 }
