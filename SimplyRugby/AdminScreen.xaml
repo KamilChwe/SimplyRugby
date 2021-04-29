@@ -15,6 +15,15 @@
         <TextBlock HorizontalAlignment="Left" Margin="10,42,0,0" TextWrapping="Wrap" Text="Player Name:" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,81,0,0" TextWrapping="Wrap" Text="Player Age:" VerticalAlignment="Top"/>
         <Button x:Name="btnAddCoach" Content="Add Coach" HorizontalAlignment="Left" Margin="173,130,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBlock HorizontalAlignment="Left" Margin="173,42,0,0" TextWrapping="Wrap" Text="Coach Name:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="173,81,0,0" TextWrapping="Wrap" Text="Coach Email:" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtCoachName" HorizontalAlignment="Left" Height="23" Margin="173,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtCoachEmail" HorizontalAlignment="Left" Height="23" Margin="173,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtNotif" HorizontalAlignment="Left" Height="120" Margin="10,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280
+                 "/>
+        <Button Content="Send to All" HorizontalAlignment="Left" Margin="10,367,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Send to Selected" HorizontalAlignment="Left" Margin="102,367,0,0" VerticalAlignment="Top" Width="95"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,226,0,0" TextWrapping="Wrap" Text="Send Message to Coach Emails:" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
