@@ -8,6 +8,7 @@ namespace SimplyRugby
 {
     class Player
     {
+        // A template Object for the Player Details and Skills
         public string name { get; set; }
 
         public int age { get; set; }

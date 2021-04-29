@@ -27,8 +27,12 @@ namespace SimplyRugby
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            // Retrives the inputted string from Text Boxes and stores them in these variables
             string username = txtUsername.Text, password = txtPassword.Password;
 
+            // Checks the inputted username and password and compares it to the stored values, if either Admin or Coach details match then the user is taken to the respective window
+            // otherwise they are told they have to re-input the login or password
+            // TODO - Add more specific info if its the password or login that is bad
             if(username == "Admin" && password == "securepassword123")
             {
                 AdminScreen adminScreen = new AdminScreen();
