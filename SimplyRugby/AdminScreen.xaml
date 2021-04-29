@@ -8,6 +8,13 @@
         Title="AdminScreen" Height="450" Width="800">
     <Grid>
         <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="707,10,0,0" VerticalAlignment="Top" Width="75" Click="btnLogout_Click"/>
+        <Button x:Name="btnAddPlayer" Content="Add Player" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top" Width="75" Click="btnAddPlayer_Click"/>
+        <TextBox x:Name="txtPlayerName" HorizontalAlignment="Left" Height="23" Margin="10,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtPlayerAge" HorizontalAlignment="Left" Height="23" Margin="10,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Player Details" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,42,0,0" TextWrapping="Wrap" Text="Player Name:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,81,0,0" TextWrapping="Wrap" Text="Player Age:" VerticalAlignment="Top"/>
+        <Button x:Name="btnAddCoach" Content="Add Coach" HorizontalAlignment="Left" Margin="173,130,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

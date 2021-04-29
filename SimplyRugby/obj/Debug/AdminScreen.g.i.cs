@@ -48,6 +48,38 @@ namespace SimplyRugby {
         #line default
         #line hidden
         
+        
+        #line 11 "..\..\AdminScreen.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button btnAddPlayer;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 12 "..\..\AdminScreen.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBox txtPlayerName;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 13 "..\..\AdminScreen.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBox txtPlayerAge;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 17 "..\..\AdminScreen.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button btnAddCoach;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -86,6 +118,24 @@ namespace SimplyRugby {
             
             #line default
             #line hidden
+            return;
+            case 2:
+            this.btnAddPlayer = ((System.Windows.Controls.Button)(target));
+            
+            #line 11 "..\..\AdminScreen.xaml"
+            this.btnAddPlayer.Click += new System.Windows.RoutedEventHandler(this.btnAddPlayer_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 3:
+            this.txtPlayerName = ((System.Windows.Controls.TextBox)(target));
+            return;
+            case 4:
+            this.txtPlayerAge = ((System.Windows.Controls.TextBox)(target));
+            return;
+            case 5:
+            this.btnAddCoach = ((System.Windows.Controls.Button)(target));
             return;
             }
             this._contentLoaded = true;

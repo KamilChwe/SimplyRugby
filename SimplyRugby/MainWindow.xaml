@@ -14,7 +14,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="10,95,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,139,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="10,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-        <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" Margin="10,189,0,0" VerticalAlignment="Top" Width="75" Click="btnLogin_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" Margin="10,183,0,0" VerticalAlignment="Top" Width="80" Click="btnLogin_Click" Grid.ColumnSpan="2" Height="26"/>
         <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" Width="120" Height="23" Grid.ColumnSpan="2"/>
 
     </Grid>

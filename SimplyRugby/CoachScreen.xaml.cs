@@ -26,8 +26,11 @@ namespace SimplyRugby
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
+            //Creates an interactive box with Yes and No
             var logoutConfirm = MessageBox.Show("Are you sure you want to logout?\nAnything unsaved will be lost!", "Logout", MessageBoxButton.YesNo);
 
+            //Asks the user if they really want to go back to the login screen, if they haven't saved their work then it doesn't get saved
+            //If the user picks no then they go back to the screen, if they pick yes then they go back to the Login Screen
             if (logoutConfirm == MessageBoxResult.Yes)
             {
                 MainWindow loginScreen = new MainWindow();
