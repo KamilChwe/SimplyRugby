@@ -9,6 +9,18 @@
     <Grid>
         <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="707,10,0,0" VerticalAlignment="Top" Width="75" Click="btnLogout_Click"/>
         <Image HorizontalAlignment="Left" Height="85" VerticalAlignment="Top" Width="100" Source="SimplyLogo.png"/>
+        <Button x:Name="btnSubmit" Content="Submit Skill Data" HorizontalAlignment="Left" Margin="195,380,0,0" VerticalAlignment="Top" Width="100"/>
+        <ListBox x:Name="lstDisplay" HorizontalAlignment="Left" Height="310" Margin="10,90,0,0" VerticalAlignment="Top" Width="180" SelectionChanged="lstDisplay_SelectionChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="195,139,0,0" TextWrapping="Wrap" Text="Tackling Score: " VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="195,90,0,0" TextWrapping="Wrap" Text="Running Score:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="195,237,0,0" TextWrapping="Wrap" Text="Passing Score:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="195,188,0,0" TextWrapping="Wrap" Text="Throwing Score:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="195,286,0,0" TextWrapping="Wrap" Text="Comments:" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtTackling" HorizontalAlignment="Left" Height="23" Margin="195,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
+        <TextBox x:Name="txtRunning" HorizontalAlignment="Left" Height="23" Margin="195,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
+        <TextBox x:Name="txtThrowing" HorizontalAlignment="Left" Height="23" Margin="195,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
+        <TextBox x:Name="txtPassing" HorizontalAlignment="Left" Height="23" Margin="195,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
+        <TextBox x:Name="txtComment" HorizontalAlignment="Left" Height="68" Margin="195,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
 
     </Grid>
 </Window>

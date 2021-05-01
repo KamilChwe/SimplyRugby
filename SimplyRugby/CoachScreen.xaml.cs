@@ -19,9 +19,20 @@ namespace SimplyRugby
     /// </summary>
     public partial class CoachScreen : Window
     {
+        JSONManager json = new JSONManager();
         public CoachScreen()
         {
             InitializeComponent();
+
+            // Displays all the Players in a list
+            lstDisplay.Items.Clear();
+            dynamic JSON = json.ConvertFromJSON("Players.json");
+
+            // Goes through each index in the array and adds it to the list
+            foreach (var player in JSON)
+            {
+                lstDisplay.Items.Add(player.name);
+            }
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
@@ -40,6 +51,30 @@ namespace SimplyRugby
             else
             {
                 return;
+            }
+        }
+
+        private void lstDisplay_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Retrieves the JSON array
+            dynamic JSON = json.ConvertFromJSON("Players.json");
+            foreach (var player in JSON)
+            {
+                lstDisplay.SelectedItem.ToString();
+                if (player.name == lstDisplay.SelectedItem.ToString())
+                {
+                    MessageBox.Show("FOUND THEM!!!!");
+                    txtRunning.Text = player.running.ToString();
+                    txtTackling.Text = player.tackling.ToString();
+                    txtThrowing.Text = player.throwing.ToString();
+                    txtPassing.Text = player.passing.ToString();
+                    txtComment.Text = player.comments.ToString();
+                    return;
+                }
+                else
+                {
+                    continue;
+                }
             }
         }
     }
