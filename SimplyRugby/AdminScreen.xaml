@@ -25,10 +25,12 @@
         <Button Content="Send to Selected" HorizontalAlignment="Left" Margin="102,385,0,0" VerticalAlignment="Top" Width="95"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,244,0,0" TextWrapping="Wrap" Text="Send Message to Coach Emails:" VerticalAlignment="Top"/>
         <Image HorizontalAlignment="Left" Height="85" VerticalAlignment="Top" Width="100" Source="SimplyLogo.png"/>
-        <ListBox HorizontalAlignment="Left" Height="268" Margin="312,112,0,0" VerticalAlignment="Top" Width="215"/>
-        <TextBlock x:Name="txtDisplayText" HorizontalAlignment="Left" Margin="312,88,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-        <Button x:Name="btnDisplayAllPlayers" Content="Display Players" HorizontalAlignment="Left" Margin="312,385,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="btnDisplayAllCoaches" Content="Display Coaches" HorizontalAlignment="Left" Margin="422,385,0,0" VerticalAlignment="Top" Width="105"/>
+        <ListBox x:Name="lstDisplay" HorizontalAlignment="Left" Height="268" Margin="312,112,0,0" VerticalAlignment="Top" Width="215"/>
+        <TextBlock x:Name="txtDisplayText" HorizontalAlignment="Left" Margin="312,88,0,0" TextWrapping="Wrap" Text="Display List: " VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <Button x:Name="btnDisplayAllPlayers" Content="Display Players" HorizontalAlignment="Left" Margin="312,385,0,0" VerticalAlignment="Top" Width="100" Click="btnDisplayAllPlayers_Click"/>
+        <Button x:Name="btnDisplayAllCoaches" Content="Display Coaches" HorizontalAlignment="Left" Margin="422,385,0,0" VerticalAlignment="Top" Width="105" Click="btnDisplayAllCoaches_Click"/>
+        <Button x:Name="btnEdit" Content="Edit Selected" HorizontalAlignment="Left" Margin="532,112,0,0" VerticalAlignment="Top" Width="90"/>
+        <Button x:Name="btnRemove" Content="Delete Selected" HorizontalAlignment="Left" Margin="532,137,0,0" VerticalAlignment="Top" Width="90"/>
 
     </Grid>
 </Window>

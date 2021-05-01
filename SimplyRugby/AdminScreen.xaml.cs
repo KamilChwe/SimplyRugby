@@ -49,6 +49,8 @@ namespace SimplyRugby
         //Adding Player Details to a JSON File
         private void btnAddPlayer_Click(object sender, RoutedEventArgs e)
         {
+            int age = 0;
+
             // Checks if any fields are empty
             if (txtPlayerName.Text == null || txtPlayerAge.Text == null)
             {
@@ -57,7 +59,18 @@ namespace SimplyRugby
             else
             {
                 string squad;
-                int age = Int32.Parse(txtPlayerAge.Text);
+
+                // Checks if the age field has an INT, if no then throw an error
+                try
+                {
+                    age = Int32.Parse(txtPlayerAge.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("The age field only accepts numbers!");
+                    return;
+                }
+
                 Player player = new Player();
 
                 #region Squad Age Check
@@ -125,6 +138,28 @@ namespace SimplyRugby
                 // I make a formatted string with all of the information pulled from the Coach Class and display it to the user
                 string formattedString = string.Format("Successfully added a Coach!\n\nCoach Details:\nName: {0}\nE-Mail: {1}", coach.name, coach.email);
                 MessageBox.Show(formattedString);
+            }
+        }
+
+        private void btnDisplayAllPlayers_Click(object sender, RoutedEventArgs e)
+        {
+            lstDisplay.Items.Clear();
+            dynamic JSON = json.ConvertFromJSON("Players.json");
+
+            foreach(var player in JSON)
+            {
+                lstDisplay.Items.Add(player.name);
+            }
+        }
+
+        private void btnDisplayAllCoaches_Click(object sender, RoutedEventArgs e)
+        {
+            lstDisplay.Items.Clear();
+            dynamic JSON = json.ConvertFromJSON("Coaches.json");
+
+            foreach (var coach in JSON)
+            {
+                lstDisplay.Items.Add(coach.name);
             }
         }
     }

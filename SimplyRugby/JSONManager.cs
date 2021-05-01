@@ -115,9 +115,22 @@ namespace SimplyRugby
         }
 
         // Retrieves the JSON string and deserializes it into an object
-        public void ConvertFromJSON()
+        public dynamic ConvertFromJSON(string filePath)
         {
+            var jsonString = File.ReadAllText(filePath);
 
+            if (filePath == "Players.json")
+            {
+                // Gives back an Array
+                dynamic JSON = JsonSerializer.Deserialize<List<Player>>(jsonString);
+                return JSON;
+            }
+            else
+            {
+                // Gives back an Array
+                dynamic JSON = JsonSerializer.Deserialize<List<Coach>>(jsonString);
+                return JSON;
+            }
         }
 
     }
