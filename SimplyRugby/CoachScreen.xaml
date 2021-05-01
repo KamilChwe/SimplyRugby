@@ -8,6 +8,7 @@
         Title="CoachScreen" Height="450" Width="800">
     <Grid>
         <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="707,10,0,0" VerticalAlignment="Top" Width="75" Click="btnLogout_Click"/>
+        <Image HorizontalAlignment="Left" Height="85" VerticalAlignment="Top" Width="100" Source="SimplyLogo.png"/>
 
     </Grid>
 </Window>
