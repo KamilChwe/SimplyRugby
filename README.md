@@ -1,3 +1,5 @@
+https://img.shields.io/badge/license-UNLICENSE-green
+
 # SimplyRugby
 Graded Unit Project for HND: Software Development
 
