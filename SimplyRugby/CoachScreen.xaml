@@ -9,7 +9,7 @@
     <Grid>
         <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="707,10,0,0" VerticalAlignment="Top" Width="75" Click="btnLogout_Click"/>
         <Image HorizontalAlignment="Left" Height="85" VerticalAlignment="Top" Width="100" Source="SimplyLogo.png"/>
-        <Button x:Name="btnSubmit" Content="Submit Skill Data" HorizontalAlignment="Left" Margin="195,380,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btnSubmit" Content="Submit Skill Data" HorizontalAlignment="Left" Margin="195,380,0,0" VerticalAlignment="Top" Width="100" Click="btnSubmit_Click"/>
         <ListBox x:Name="lstDisplay" HorizontalAlignment="Left" Height="310" Margin="10,90,0,0" VerticalAlignment="Top" Width="180" SelectionChanged="lstDisplay_SelectionChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="195,139,0,0" TextWrapping="Wrap" Text="Tackling Score: " VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="195,90,0,0" TextWrapping="Wrap" Text="Running Score:" VerticalAlignment="Top"/>

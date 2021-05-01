@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace SimplyRugby
 {
@@ -63,7 +64,6 @@ namespace SimplyRugby
                 lstDisplay.SelectedItem.ToString();
                 if (player.name == lstDisplay.SelectedItem.ToString())
                 {
-                    MessageBox.Show("FOUND THEM!!!!");
                     txtRunning.Text = player.running.ToString();
                     txtTackling.Text = player.tackling.ToString();
                     txtThrowing.Text = player.throwing.ToString();
@@ -75,6 +75,48 @@ namespace SimplyRugby
                 {
                     continue;
                 }
+            }
+        }
+
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+            Player players = new Player();
+
+            // Retrieves the JSON array
+            dynamic JSON = json.ConvertFromJSON("Players.json");
+            foreach (var player in JSON)
+            {
+                lstDisplay.SelectedItem.ToString();
+                if (player.name == lstDisplay.SelectedItem.ToString())
+                {
+                    // I save the edited information of the player before deleting them
+                    // I have to delete the player from the JSON otherwise they will be duplicated
+                    players.name = player.name;
+                    players.age = player.age;
+                    players.squad = player.squad;
+                    players.running = Int32.Parse(txtRunning.Text);
+                    players.tackling = Int32.Parse(txtTackling.Text);
+                    players.throwing = Int32.Parse(txtThrowing.Text);
+                    players.passing = Int32.Parse(txtPassing.Text);
+                    players.comments = txtComment.Text;
+                    JSON.Remove(player);
+
+                    // This is a bit hacky but basically I removed the old player details from the JSON and am now overwriting the file with the non edited players as to not get any duplicate Players
+                    File.WriteAllText("Players.json", "[]");
+                    foreach(var thePlayer in JSON)
+                    {
+                        json.ConvertToJSON("Players.json", thePlayer, null);
+                    }
+
+                    // After rewriting the Players I add the edited player back into the JSON
+                    json.ConvertToJSON("Players.json", players, null);
+                    return;
+                }
+                else
+                {
+                    continue;
+                }
+
             }
         }
     }
