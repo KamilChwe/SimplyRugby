@@ -90,8 +90,25 @@ namespace SimplyRugby
             player.comments = "";
             #endregion
 
-            json.ConvertToJSON("Players.json", player);
+            json.ConvertToJSON("Players.json", player, null);
+
+            // I make a formatted string with all of the information pulled from the Player Class and display it to the user
             string formattedString = string.Format("Successfully added a Player!\n\nPlayer Details:\nName: {0}\nAge: {1}\nSquad: {2}", player.name, player.age, player.squad);
+            MessageBox.Show(formattedString);
+        }
+
+        private void btnAddCoach_Click(object sender, RoutedEventArgs e)
+        {
+            Coach coach = new Coach();
+
+            // Package the Coach Details into an Object
+            coach.name = txtCoachName.Text;
+            coach.email = txtCoachEmail.Text;
+
+            json.ConvertToJSON("Coaches.json", null, coach);
+
+            // I make a formatted string with all of the information pulled from the Coach Class and display it to the user
+            string formattedString = string.Format("Successfully added a Coach!\n\nCoach Details:\nName: {0}\nE-Mail: {1}", coach.name, coach.email);
             MessageBox.Show(formattedString);
         }
     }

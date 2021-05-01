@@ -14,7 +14,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="7,88,0,0" TextWrapping="Wrap" Text="Player Details" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="7,120,0,0" TextWrapping="Wrap" Text="Player Name:" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="7,159,0,0" TextWrapping="Wrap" Text="Player Age:" VerticalAlignment="Top"/>
-        <Button x:Name="btnAddCoach" Content="Add Coach" HorizontalAlignment="Left" Margin="170,203,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnAddCoach" Content="Add Coach" HorizontalAlignment="Left" Margin="170,203,0,0" VerticalAlignment="Top" Width="75" Click="btnAddCoach_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="170,120,0,0" TextWrapping="Wrap" Text="Coach Name:" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="170,159,0,0" TextWrapping="Wrap" Text="Coach Email:" VerticalAlignment="Top"/>
         <TextBox x:Name="txtCoachName" HorizontalAlignment="Left" Height="23" Margin="170,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -25,6 +25,10 @@
         <Button Content="Send to Selected" HorizontalAlignment="Left" Margin="102,385,0,0" VerticalAlignment="Top" Width="95"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,244,0,0" TextWrapping="Wrap" Text="Send Message to Coach Emails:" VerticalAlignment="Top"/>
         <Image HorizontalAlignment="Left" Height="85" VerticalAlignment="Top" Width="100" Source="SimplyLogo.png"/>
+        <ListBox HorizontalAlignment="Left" Height="268" Margin="312,112,0,0" VerticalAlignment="Top" Width="215"/>
+        <TextBlock x:Name="txtDisplayText" HorizontalAlignment="Left" Margin="312,88,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <Button x:Name="btnDisplayAllPlayers" Content="Display Players" HorizontalAlignment="Left" Margin="312,385,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btnDisplayAllCoaches" Content="Display Coaches" HorizontalAlignment="Left" Margin="422,385,0,0" VerticalAlignment="Top" Width="105"/>
 
     </Grid>
 </Window>
