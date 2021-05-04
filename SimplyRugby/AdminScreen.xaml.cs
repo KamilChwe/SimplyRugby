@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -131,7 +132,21 @@ namespace SimplyRugby
 
                 // Package the Coach Details into an Object
                 coach.name = txtCoachName.Text;
-                coach.email = txtCoachEmail.Text;
+
+                // Checks if the entered email is correct format
+                string email = txtCoachEmail.Text;
+                Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+                Match match = regex.Match(email);
+                if (match.Success)
+                {
+                    coach.email = txtCoachEmail.Text;
+                }
+                else
+                {
+                    MessageBox.Show("You have entered an incorrect email address!");
+                    return;
+                }
+
 
                 json.ConvertToJSON("Coaches.json", null, coach);
 
