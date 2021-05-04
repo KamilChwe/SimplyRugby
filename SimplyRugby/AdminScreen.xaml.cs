@@ -21,8 +21,8 @@ namespace SimplyRugby
     /// </summary>
     public partial class AdminScreen : Window
     {
-        Player players = new Player();
         JSONManager json = new JSONManager();
+
         // Later in the code I need to delete entries so I'm using the same technique as in CoachScreen code where I delete the entry and save all the others and rewrite the file
         // I use this bool to check if the Coach or Player object should be used
         bool playersDisplayed = false;
@@ -63,8 +63,6 @@ namespace SimplyRugby
             }
             else
             {
-                string squad;
-
                 // Checks if the age field has an INT, if no then throw an error
                 try
                 {
@@ -79,6 +77,7 @@ namespace SimplyRugby
                 Player player = new Player();
 
                 #region Squad Age Check
+                string squad;
                 // Automatically checks which Squad the Player should be in depending on their age
                 if (age <= 14)
                 {
@@ -151,7 +150,6 @@ namespace SimplyRugby
                     return;
                 }
 
-
                 json.ConvertToJSON("Coaches.json", null, coach);
 
                 // I make a formatted string with all of the information pulled from the Coach Class and display it to the user
@@ -186,9 +184,6 @@ namespace SimplyRugby
 
         private void btnRemove_Click(object sender, RoutedEventArgs e)
         {
-            //Player players = new Player();
-            //Coach coaches = new Coach();
-
             if (playersDisplayed)
             {
                 MessageBox.Show("Deleted Player: " + lstDisplay.SelectedItem.ToString());

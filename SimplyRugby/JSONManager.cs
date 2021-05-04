@@ -119,6 +119,8 @@ namespace SimplyRugby
         {
             var jsonString = File.ReadAllText(filePath);
 
+            // Checks if the Player JSON got called or if the Coach JSON got called
+            // Returns a Dynamic JSON Object, behaves kinda like an Array
             if (filePath == "Players.json")
             {
                 // Gives back an Array
@@ -136,13 +138,15 @@ namespace SimplyRugby
         // Recieves a JSON entry and JSON file path and deletes that Entry
         public void DeleteFromJSON(string entry, string filePath)
         {
-            // Deletes a specified entry in the Players JSON
-            if(filePath == "Players.json")
-            {
-                dynamic JSON = ConvertFromJSON("Players.json");
+            dynamic JSON = ConvertFromJSON(filePath);
 
+            // Deletes a specified entry in the Players JSON
+            if (filePath == "Players.json")
+            {
+                // Checks the provided name with all the names in the JSON
                 foreach (var player in JSON)
                 {
+                    // Upon finding the name it deletes it and rewrites the whole JSON
                     if (player.name == entry)
                     {
                         JSON.Remove(player);
@@ -159,10 +163,10 @@ namespace SimplyRugby
             // Deletes a specified entry in the Coaches JSON
             else
             {
-                dynamic JSON = ConvertFromJSON("Coaches.json");
-
+                // Checks the provided name with all the names in the JSON
                 foreach (var coach in JSON)
                 {
+                    // Upon finding the name it deletes it and rewrites the whole JSON
                     if (coach.name == entry)
                     {
                         JSON.Remove(coach);
