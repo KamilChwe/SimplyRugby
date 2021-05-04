@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -22,6 +23,9 @@ namespace SimplyRugby
     {
         Player players = new Player();
         JSONManager json = new JSONManager();
+        // Later in the code I need to delete entries so I'm using the same technique as in CoachScreen code where I delete the entry and save all the others and rewrite the file
+        // I use this bool to check if the Coach or Player object should be used
+        bool playersDisplayed = false;
 
         public AdminScreen()
         {
@@ -158,6 +162,7 @@ namespace SimplyRugby
 
         private void btnDisplayAllPlayers_Click(object sender, RoutedEventArgs e)
         {
+            playersDisplayed = true;
             lstDisplay.Items.Clear();
             dynamic JSON = json.ConvertFromJSON("Players.json");
 
@@ -169,12 +174,47 @@ namespace SimplyRugby
 
         private void btnDisplayAllCoaches_Click(object sender, RoutedEventArgs e)
         {
+            playersDisplayed = false;
             lstDisplay.Items.Clear();
             dynamic JSON = json.ConvertFromJSON("Coaches.json");
 
             foreach (var coach in JSON)
             {
                 lstDisplay.Items.Add(coach.name);
+            }
+        }
+
+        private void btnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            //Player players = new Player();
+            //Coach coaches = new Coach();
+
+            if (playersDisplayed)
+            {
+                MessageBox.Show("Deleted Player: " + lstDisplay.SelectedItem.ToString());
+                json.DeleteFromJSON(lstDisplay.SelectedItem.ToString(), "Players.json");
+
+                // Resets the List 
+                lstDisplay.Items.Clear();
+                dynamic JSON = json.ConvertFromJSON("Players.json");
+
+                foreach (var player in JSON)
+                {
+                    lstDisplay.Items.Add(player.name);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Deleted Coach: " + lstDisplay.SelectedItem.ToString());
+                json.DeleteFromJSON(lstDisplay.SelectedItem.ToString(), "Coaches.json");
+
+                // Resets the List
+                lstDisplay.Items.Clear();
+                dynamic JSON = json.ConvertFromJSON("Coaches.json");
+                foreach (var coach in JSON)
+                {
+                    lstDisplay.Items.Add(coach.name);
+                }
             }
         }
     }

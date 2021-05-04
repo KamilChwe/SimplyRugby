@@ -1,3 +1,12 @@
 [
-
+  {
+    "name": "Kamil",
+    "age": 18,
+    "squad": "Under 20s",
+    "tackling": 0,
+    "passing": 0,
+    "running": 0,
+    "throwing": 0,
+    "comments": ""
+  }
 ]

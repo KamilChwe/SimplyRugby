@@ -30,7 +30,7 @@
         <Button x:Name="btnDisplayAllPlayers" Content="Display Players" HorizontalAlignment="Left" Margin="312,385,0,0" VerticalAlignment="Top" Width="100" Click="btnDisplayAllPlayers_Click"/>
         <Button x:Name="btnDisplayAllCoaches" Content="Display Coaches" HorizontalAlignment="Left" Margin="422,385,0,0" VerticalAlignment="Top" Width="105" Click="btnDisplayAllCoaches_Click"/>
         <Button x:Name="btnEdit" Content="Edit Selected" HorizontalAlignment="Left" Margin="532,112,0,0" VerticalAlignment="Top" Width="90"/>
-        <Button x:Name="btnRemove" Content="Delete Selected" HorizontalAlignment="Left" Margin="532,137,0,0" VerticalAlignment="Top" Width="90"/>
+        <Button x:Name="btnRemove" Content="Delete Selected" HorizontalAlignment="Left" Margin="532,137,0,0" VerticalAlignment="Top" Width="90" Click="btnRemove_Click"/>
         <Button x:Name="btnSelect" Content="Mult-Select" HorizontalAlignment="Left" Margin="532,360,0,0" VerticalAlignment="Top" Width="90"/>
 
     </Grid>

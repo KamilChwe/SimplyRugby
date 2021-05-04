@@ -133,5 +133,49 @@ namespace SimplyRugby
             }
         }
 
+        // Recieves a JSON entry and JSON file path and deletes that Entry
+        public void DeleteFromJSON(string entry, string filePath)
+        {
+            // Deletes a specified entry in the Players JSON
+            if(filePath == "Players.json")
+            {
+                dynamic JSON = ConvertFromJSON("Players.json");
+
+                foreach (var player in JSON)
+                {
+                    if (player.name == entry)
+                    {
+                        JSON.Remove(player);
+
+                        File.WriteAllText("Players.json", "[]");
+                        foreach (var players in JSON)
+                        {
+                            ConvertToJSON("Players.json", players, null);
+                        }
+                        return;
+                    }
+                }
+            }
+            // Deletes a specified entry in the Coaches JSON
+            else
+            {
+                dynamic JSON = ConvertFromJSON("Coaches.json");
+
+                foreach (var coach in JSON)
+                {
+                    if (coach.name == entry)
+                    {
+                        JSON.Remove(coach);
+
+                        File.WriteAllText("Coaches.json", "[]");
+                        foreach (var coaches in JSON)
+                        {
+                            ConvertToJSON("Coaches.json", null, coaches);
+                        }
+                        return;
+                    }
+                }
+            }
+        }
     }
 }
