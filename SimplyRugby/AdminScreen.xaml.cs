@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows;
 
@@ -197,6 +198,92 @@ namespace SimplyRugby
                 foreach (var coach in JSON)
                 {
                     lstDisplay.Items.Add(coach.name);
+                }
+            }
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            if(playersDisplayed)
+            {
+                Player players = new Player();
+                dynamic JSON = json.ConvertFromJSON("Players.json");
+
+                foreach (var player in JSON)
+                {
+                    if(players.name == lstDisplay.SelectedItem.ToString())
+                    {
+                        // I save the edited information of the player before deleting them
+                        // I have to delete the player from the JSON otherwise they will be duplicated
+                        players.name = txtPlayerName.Text;
+                        players.age = Int32.Parse(txtPlayerAge.Text);
+                        players.squad = players.squad;
+                        players.running = players.running;
+                        players.tackling = players.tackling;
+                        players.throwing = players.throwing;
+                        players.passing = players.passing;
+                        players.comments = players.comments;
+                        json.DeleteFromJSON(lstDisplay.SelectedItem.ToString(), "Players.json");
+
+                        // This is a bit hacky but basically I removed the old player details from the JSON and am now overwriting the file with the non edited players as to not get any duplicate Players
+                        File.WriteAllText("Players.json", "[]");
+                        foreach (var thePlayer in JSON)
+                        {
+                            json.ConvertToJSON("Players.json", thePlayer, null);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                Coach coach = new Coach();
+                dynamic JSON = json.ConvertFromJSON("Coaches.json");
+                foreach(var coaches in JSON)
+                {
+                    if(coaches.name == lstDisplay.SelectedItem.ToString())
+                    {
+                        coaches.name = txtCoachName.Text;
+                        coaches.email = txtCoachEmail.Text;
+                        json.DeleteFromJSON(lstDisplay.SelectedItem.ToString(), "Coaches.json");
+
+                        // This is a bit hacky but basically I removed the old coach details from the JSON and am now overwriting the file with the non edited coaches as to not get any duplicate Coaches
+                        File.WriteAllText("Coaches.json", "[]");
+                        foreach (var theCoaches in JSON)
+                        {
+                            json.ConvertToJSON("Coaches.json", null, theCoaches);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void lstDisplay_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if (playersDisplayed)
+            {
+                dynamic JSON = json.ConvertFromJSON("Players.json");
+
+                foreach(var player in JSON)
+                {
+                    if(player.name == lstDisplay.SelectedItem.ToString())
+                    {
+                        int age = player.age;
+                        txtPlayerName.Text = player.name;
+                        txtPlayerAge.Text = age.ToString();
+                    }
+                }
+            }
+            else
+            {
+                dynamic JSON = json.ConvertFromJSON("Coaches.json");
+
+                foreach (var coach in JSON)
+                {
+                    if (coach.name == lstDisplay.SelectedItem.ToString())
+                    {
+                        txtCoachName.Text = coach.name;
+                        txtCoachEmail.Text = coach.email;
+                    }
                 }
             }
         }
