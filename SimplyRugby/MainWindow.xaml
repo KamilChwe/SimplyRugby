@@ -5,18 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SimplyRugby"
         mc:Ignorable="d"
-        Title="Login Screen" Height="250" Width="450">
+        Title="Login Screen" Height="375.4" Width="625">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="21*"/>
             <ColumnDefinition Width="200*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock HorizontalAlignment="Left" Margin="0,85,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Left" Margin="0,129,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="0,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-        <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" Margin="0,173,0,0" VerticalAlignment="Top" Width="80" Click="btnLogin_Click" Height="26" Grid.ColumnSpan="2"/>
-        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="0,145,0,0" VerticalAlignment="Top" Width="120" Height="23" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,101,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Grid.ColumnSpan="2" FontSize="24"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,168,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Grid.ColumnSpan="2" FontSize="24"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="25" Margin="10,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" FontSize="18" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" Margin="10,235,0,0" VerticalAlignment="Top" Width="70" Click="btnLogin_Click" Height="30" Grid.ColumnSpan="2" FontSize="18"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="10,205,0,0" VerticalAlignment="Top" Width="170" Height="25" Grid.ColumnSpan="2" FontSize="18"/>
         <Image HorizontalAlignment="Left" Height="85" VerticalAlignment="Top" Width="100" Source="SimplyLogo.png" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnHelp" Content="Help" Grid.Column="1" HorizontalAlignment="Left" Margin="468,10,0,0" VerticalAlignment="Top" Width="80" FontSize="18" Click="btnHelp_Click"/>
 
     </Grid>
 </Window>
