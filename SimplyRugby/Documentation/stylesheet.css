@@ -1,0 +1,27 @@
+body {
+    background-color: bisque;
+}
+
+/* TEXTS */
+.mainText{
+    font-size: 32px;
+}
+
+/* DIVS*/
+.innerDiv{
+    margin-top: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: beige;
+    border: 10px ridge #efefc3;
+    padding: 10px;
+}
+
+.centerDiv{
+    align-content: center;
+    background-color: beige;
+    border: 10px ridge #efefc3;
+    padding: 10px;
+    margin-left: 15%;
+    margin-right: 15%;
+}

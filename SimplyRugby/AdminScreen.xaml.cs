@@ -224,6 +224,7 @@ namespace SimplyRugby
                         players.passing = players.passing;
                         players.comments = players.comments;
                         json.DeleteFromJSON(lstDisplay.SelectedItem.ToString(), "Players.json");
+                        MessageBox.Show("Edited Player");
 
                         // This is a bit hacky but basically I removed the old player details from the JSON and am now overwriting the file with the non edited players as to not get any duplicate Players
                         File.WriteAllText("Players.json", "[]");
@@ -245,6 +246,7 @@ namespace SimplyRugby
                         coaches.name = txtCoachName.Text;
                         coaches.email = txtCoachEmail.Text;
                         json.DeleteFromJSON(lstDisplay.SelectedItem.ToString(), "Coaches.json");
+                        MessageBox.Show("Edited Coach");
 
                         // This is a bit hacky but basically I removed the old coach details from the JSON and am now overwriting the file with the non edited coaches as to not get any duplicate Coaches
                         File.WriteAllText("Coaches.json", "[]");
@@ -291,7 +293,7 @@ namespace SimplyRugby
         private void btnHelp_Click(object sender, RoutedEventArgs e)
         {
             string filePath = Path.Combine(Environment.CurrentDirectory,
-                    @"..\..\Documentation\documentation.html");
+                    @"..\..\Documentation\admin.html");
             System.Diagnostics.Process.Start(filePath);
             MessageBox.Show("A web window should've opened!");
         }
