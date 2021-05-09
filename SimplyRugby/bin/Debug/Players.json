@@ -1,15 +1,5 @@
 [
   {
-    "name": "Kamil",
-    "age": 18,
-    "squad": "Under 20s",
-    "tackling": 0,
-    "passing": 0,
-    "running": 0,
-    "throwing": 0,
-    "comments": ""
-  },
-    {
     "name": "Jolyne",
     "age": 16,
     "squad": "Under 18s",
@@ -18,5 +8,15 @@
     "running": 0,
     "throwing": 0,
     "comments": ""
+  },
+  {
+    "name": "Kamil",
+    "age": 18,
+    "squad": "Under 20s",
+    "tackling": 8,
+    "passing": 2,
+    "running": 6,
+    "throwing": 4,
+    "comments": "Very Poggers"
   }
 ]

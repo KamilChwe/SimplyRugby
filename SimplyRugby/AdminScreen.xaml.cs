@@ -287,5 +287,13 @@ namespace SimplyRugby
                 }
             }
         }
+
+        private void btnHelp_Click(object sender, RoutedEventArgs e)
+        {
+            string filePath = Path.Combine(Environment.CurrentDirectory,
+                    @"..\..\Documentation\documentation.html");
+            System.Diagnostics.Process.Start(filePath);
+            MessageBox.Show("A web window should've opened!");
+        }
     }
 }
