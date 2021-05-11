@@ -11,7 +11,7 @@ namespace SimplyRugby
 
         public string email { get; set; }
 
-        public int phoneNo { get; set; }
+        public long phoneNo { get; set; }
 
         public int sru { get; set; }
 

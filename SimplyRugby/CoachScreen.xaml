@@ -9,43 +9,52 @@
     <Grid>
         <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="707,10,0,0" VerticalAlignment="Top" Width="75" Click="btnLogout_Click"/>
         <Image HorizontalAlignment="Left" Height="85" VerticalAlignment="Top" Width="100" Source="SimplyLogo.png"/>
-        <Button x:Name="btnSubmit" Content="Submit Skill Data" HorizontalAlignment="Left" Margin="195,287,0,0" VerticalAlignment="Top" Width="100" Click="btnSubmit_Click"/>
+        <Button x:Name="btnSubmit" Content="Submit Skill Data" HorizontalAlignment="Left" Margin="195,289,0,0" VerticalAlignment="Top" Width="100" Click="btnSubmit_Click"/>
         <ListBox x:Name="lstDisplay" HorizontalAlignment="Left" Height="270" Margin="10,90,0,0" VerticalAlignment="Top" Width="180" SelectionChanged="lstDisplay_SelectionChanged"/>
         <Button x:Name="btnHelp" Content="Help" HorizontalAlignment="Left" Margin="627,10,0,0" VerticalAlignment="Top" Width="75" Click="btnHelp_Click" Height="20"/>
-        <TextBox x:Name="txtStandard" HorizontalAlignment="Left" Height="16" Margin="250,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-        <TextBlock HorizontalAlignment="Left" Margin="195,90,0,0" TextWrapping="Wrap" Text="Passing" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" TextDecorations="Underline"/>
-        <TextBlock HorizontalAlignment="Left" Margin="359,90,0,0" TextWrapping="Wrap" Text="Tackling" VerticalAlignment="Top" FontSize="14" TextDecorations="Underline" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Margin="195,114,0,0" TextWrapping="Wrap" Text="Standard:" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="195,135,0,0" TextWrapping="Wrap" Text="Spin:" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="195,156,0,0" TextWrapping="Wrap" Text="Pop:" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="359,114,0,0" TextWrapping="Wrap" Text="Front:" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="359,135,0,0" TextWrapping="Wrap" Text="Rear:" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="359,156,0,0" TextWrapping="Wrap" Text="Side:" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="359,177,0,0" TextWrapping="Wrap" Text="Scrabble:" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtSpin" HorizontalAlignment="Left" Height="16" Margin="250,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-        <TextBox x:Name="txtPop" HorizontalAlignment="Left" Height="16" Margin="250,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-        <TextBox x:Name="txtScrabble" HorizontalAlignment="Left" Height="16" Margin="412,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-        <TextBox x:Name="txtSide" HorizontalAlignment="Left" Height="16" Margin="412,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-        <TextBox x:Name="txtRear" HorizontalAlignment="Left" Height="16" Margin="412,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-        <TextBox x:Name="txtFront" HorizontalAlignment="Left" Height="16" Margin="412,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-        <TextBlock HorizontalAlignment="Left" Margin="519,90,0,0" TextWrapping="Wrap" Text="Kicking" VerticalAlignment="Top" FontSize="14" TextDecorations="Underline" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Margin="519,114,0,0" TextWrapping="Wrap" Text="Drop:" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Punt:" VerticalAlignment="Top" Margin="519,135,0,0"/>
-        <TextBlock HorizontalAlignment="Left" Margin="519,156,0,0" TextWrapping="Wrap" Text="Grubber:" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="521,177,0,0" TextWrapping="Wrap" Text="Goal:" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtDrop" HorizontalAlignment="Left" Height="16" Margin="570,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-        <TextBox x:Name="txtGrubber" HorizontalAlignment="Left" Height="16" Margin="570,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-        <TextBox x:Name="txtPunt" HorizontalAlignment="Left" Height="16" Margin="570,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-        <TextBox x:Name="txtGoal" HorizontalAlignment="Left" Height="16" Margin="570,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="10,376,0,0" VerticalAlignment="Top" Width="75"/>
-        <TextBlock HorizontalAlignment="Left" Margin="75,360,0,0" TextWrapping="Wrap" Text="Filters" VerticalAlignment="Top" TextDecorations="Underline"/>
-        <TextBox x:Name="txtPassComment" HorizontalAlignment="Left" Height="60" Margin="195,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock HorizontalAlignment="Left" Margin="195,201,0,0" TextWrapping="Wrap" Text="Comments:" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="359,201,0,0" TextWrapping="Wrap" Text="Comments:" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtTackComment" HorizontalAlignment="Left" Height="60" Margin="359,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBox x:Name="txtKickComment" HorizontalAlignment="Left" Height="60" Margin="521,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock HorizontalAlignment="Left" Margin="521,201,0,0" TextWrapping="Wrap" Text="Comments:" VerticalAlignment="Top"/>
-        <TextBlock x:Name="txtLastChanged" HorizontalAlignment="Left" Margin="195,312,0,0" TextWrapping="Wrap" Text="Last Changed: " VerticalAlignment="Top" RenderTransformOrigin="-2.551,1.805" TextDecorations="Underline"/>
+        <TextBox x:Name="txtStandard" HorizontalAlignment="Left" Height="16" Margin="250,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        <TextBlock HorizontalAlignment="Left" Margin="195,92,0,0" TextWrapping="Wrap" Text="Passing" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" TextDecorations="Underline"/>
+        <TextBlock HorizontalAlignment="Left" Margin="350,92,0,0" TextWrapping="Wrap" Text="Tackling" VerticalAlignment="Top" FontSize="14" TextDecorations="Underline" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="195,116,0,0" TextWrapping="Wrap" Text="Standard:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="195,137,0,0" TextWrapping="Wrap" Text="Spin:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="195,158,0,0" TextWrapping="Wrap" Text="Pop:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="350,116,0,0" TextWrapping="Wrap" Text="Front:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="350,137,0,0" TextWrapping="Wrap" Text="Rear:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="350,158,0,0" TextWrapping="Wrap" Text="Side:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="350,179,0,0" TextWrapping="Wrap" Text="Scrabble:" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtSpin" HorizontalAlignment="Left" Height="16" Margin="250,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        <TextBox x:Name="txtPop" HorizontalAlignment="Left" Height="16" Margin="250,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        <TextBox x:Name="txtScrabble" HorizontalAlignment="Left" Height="16" Margin="403,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        <TextBox x:Name="txtSide" HorizontalAlignment="Left" Height="16" Margin="403,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        <TextBox x:Name="txtRear" HorizontalAlignment="Left" Height="16" Margin="403,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        <TextBox x:Name="txtFront" HorizontalAlignment="Left" Height="16" Margin="403,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        <TextBlock HorizontalAlignment="Left" Margin="503,92,0,0" TextWrapping="Wrap" Text="Kicking" VerticalAlignment="Top" FontSize="14" TextDecorations="Underline" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="503,116,0,0" TextWrapping="Wrap" Text="Drop:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Punt:" VerticalAlignment="Top" Margin="503,137,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="503,158,0,0" TextWrapping="Wrap" Text="Grubber:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="505,179,0,0" TextWrapping="Wrap" Text="Goal:" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDrop" HorizontalAlignment="Left" Height="16" Margin="554,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        <TextBox x:Name="txtGrubber" HorizontalAlignment="Left" Height="16" Margin="554,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        <TextBox x:Name="txtPunt" HorizontalAlignment="Left" Height="16" Margin="554,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        <TextBox x:Name="txtGoal" HorizontalAlignment="Left" Height="16" Margin="554,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,366,0,0" TextWrapping="Wrap" Text="Filter:" VerticalAlignment="Top" TextDecorations="Underline" RenderTransformOrigin="-1.053,-14.746" FontSize="14"/>
+        <TextBox x:Name="txtPassComment" HorizontalAlignment="Left" Height="60" Margin="195,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="195,203,0,0" TextWrapping="Wrap" Text="Comments:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="350,203,0,0" TextWrapping="Wrap" Text="Comments:" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtTackComment" HorizontalAlignment="Left" Height="60" Margin="350,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="txtKickComment" HorizontalAlignment="Left" Height="60" Margin="505,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="505,203,0,0" TextWrapping="Wrap" Text="Comments:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtLastChanged" HorizontalAlignment="Left" Margin="195,310,0,0" TextWrapping="Wrap" Text="Last Changed: " VerticalAlignment="Top" RenderTransformOrigin="-2.551,1.805" TextDecorations="Underline">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.342"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <ComboBox x:Name="boxFilter" HorizontalAlignment="Left" Margin="49,365,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
 
     </Grid>
 </Window>

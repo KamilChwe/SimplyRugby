@@ -7,6 +7,11 @@ body {
     font-size: 32px;
 }
 
+.subText{
+    font-size: 24px;
+    font-style: italic;
+}
+
 /* DIVS*/
 .innerDiv{
     margin-top: 10%;

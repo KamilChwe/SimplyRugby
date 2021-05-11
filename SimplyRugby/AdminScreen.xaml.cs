@@ -43,27 +43,47 @@ namespace SimplyRugby
         //Adding Player Details to a JSON File
         private void btnAddPlayer_Click(object sender, RoutedEventArgs e)
         {
-            int age = 0;
-
             // Checks if any fields are empty
-            if (txtPlayerName.Text == null || playerDOB == null || txtPlayerEmail == null || txtPlayerPhone == null || txtPlayerSRU == null)
+            if (txtPlayerName.Text == "" || playerDOB == null || txtPlayerEmail.Text == "" || txtPlayerPhone.Text == "" || txtPlayerSRU.Text == "")
             {
                 MessageBox.Show("Please make sure ALL of the Player fields are filled in!");
             }
             else
             {
-                // Checks if the age field has an INT, if no then throw an error
-                try
+                #region Player Checks
+                // Checks if the SRU is a number and is equal to 8 digits
+                Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+                Match match = regex.Match(txtPlayerEmail.Text);
+                if (!int.TryParse(txtPlayerSRU.Text, out int value))
                 {
-                    int dob = playerDOB.SelectedDate.Value.Date.Year;
-
-                    age = DateTime.Now.Year - dob;
-                }
-                catch
-                {
-                    MessageBox.Show("The age field only accepts numbers!");
+                    MessageBox.Show("The SRU can only be made up of numbers!");
                     return;
                 }
+                if (!long.TryParse(txtPlayerPhone.Text, out long result))
+                {
+                    MessageBox.Show("Phone numbers can only be made up of numbers!");
+                    return;
+                }
+                if (txtPlayerSRU.Text.Length != 8)
+                {
+                    MessageBox.Show("The SRU needs to be 8 digits long!");
+                    return;
+                }
+                if (txtPlayerPhone.Text.Length != 11)
+                {
+                    MessageBox.Show("Phone numbers must be 11 digits long!");
+                    return;
+                }
+                if (!match.Success)
+                {
+                    MessageBox.Show("Please input a valid Email!");
+                    return;
+                }
+                #endregion
+
+                // turns the DOB to an Age
+                int dob = playerDOB.SelectedDate.Value.Date.Year;
+                int age = DateTime.Now.Year - dob;
 
                 Player player = new Player();
 
@@ -97,8 +117,8 @@ namespace SimplyRugby
                 player.name = txtPlayerName.Text;
                 player.dob = playerDOB.SelectedDate.Value.Date;
                 player.email = txtPlayerEmail.Text;
-                player.sru = Int32.Parse(txtPlayerSRU.Text);
-                player.phoneNo = Int32.Parse(txtPlayerPhone.Text);
+                player.sru = int.Parse(txtPlayerSRU.Text);
+                player.phoneNo = long.Parse(txtPlayerPhone.Text);
                 player.squad = squad;
                 // The 0s are because Admins are not allowed to change or add Skill data, the coach can change these values
                 player.lastChanged = DateTime.UtcNow;
@@ -236,8 +256,8 @@ namespace SimplyRugby
                         // I have to delete the player from the JSON otherwise they will be duplicated
                         player.name = txtPlayerName.Text;
                         player.dob = playerDOB.SelectedDate.Value.Date;
-                        player.phoneNo = Int32.Parse(txtPlayerPhone.Text);
-                        player.sru = Int32.Parse(txtPlayerSRU.Text);
+                        player.phoneNo = long.Parse(txtPlayerPhone.Text);
+                        player.sru = int.Parse(txtPlayerSRU.Text);
                         player.email = txtPlayerEmail.Text;
 
                         player.lastChanged = DateTime.UtcNow;
