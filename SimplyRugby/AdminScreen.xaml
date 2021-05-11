@@ -19,7 +19,7 @@
         <TextBox x:Name="txtCoachName" HorizontalAlignment="Left" Height="23" Margin="170,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtCoachEmail" HorizontalAlignment="Left" Height="23" Margin="170,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtNotif" HorizontalAlignment="Left" Height="120" Margin="532,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
-        <Button Content="Send to All" HorizontalAlignment="Left" Margin="532,385,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnSendToAll" Content="Send to All" HorizontalAlignment="Left" Margin="532,385,0,0" VerticalAlignment="Top" Width="75"/>
         <TextBlock HorizontalAlignment="Left" Margin="532,239,0,0" TextWrapping="Wrap" Text="Send Message to Coach Emails:" VerticalAlignment="Top"/>
         <Image HorizontalAlignment="Left" Height="85" VerticalAlignment="Top" Width="100" Source="SimplyLogo.png"/>
         <ListBox x:Name="lstDisplay" HorizontalAlignment="Left" Height="268" Margin="312,112,0,0" VerticalAlignment="Top" Width="215" SelectionChanged="lstDisplay_SelectionChanged"/>
