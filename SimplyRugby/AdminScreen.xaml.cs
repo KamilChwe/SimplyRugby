@@ -46,7 +46,7 @@ namespace SimplyRugby
             int age = 0;
 
             // Checks if any fields are empty
-            if (txtPlayerName.Text == null || txtPlayerAge.Text == null)
+            if (txtPlayerName.Text == null || playerDOB == null || txtPlayerEmail == null || txtPlayerPhone == null || txtPlayerSRU == null)
             {
                 MessageBox.Show("Please make sure ALL of the Player fields are filled in!");
             }
@@ -55,7 +55,9 @@ namespace SimplyRugby
                 // Checks if the age field has an INT, if no then throw an error
                 try
                 {
-                    age = Int32.Parse(txtPlayerAge.Text);
+                    int dob = playerDOB.SelectedDate.Value.Date.Year;
+
+                    age = DateTime.Now.Year - dob;
                 }
                 catch
                 {
@@ -93,20 +95,37 @@ namespace SimplyRugby
                 #region Creating a Player Object
                 // Package the Player Details into an Object
                 player.name = txtPlayerName.Text;
-                player.age = age;
+                player.dob = playerDOB.SelectedDate.Value.Date;
+                player.email = txtPlayerEmail.Text;
+                player.sru = Int32.Parse(txtPlayerSRU.Text);
+                player.phoneNo = Int32.Parse(txtPlayerPhone.Text);
                 player.squad = squad;
                 // The 0s are because Admins are not allowed to change or add Skill data, the coach can change these values
-                player.running = 0;
-                player.tackling = 0;
-                player.passing = 0;
-                player.throwing = 0;
-                player.comments = "";
+                player.lastChanged = DateTime.UtcNow;
+                
+                player.standard = 0;
+                player.spin = 0;
+                player.pop = 0;
+
+                player.front = 0;
+                player.rear = 0;
+                player.side = 0;
+                player.scrabble = 0;
+
+                player.drop = 0;
+                player.punt = 0;
+                player.grubber = 0;
+                player.goal = 0;
+
+                player.passingComments = "";
+                player.tacklingComments = "";
+                player.kickingComments = "";
                 #endregion
 
                 json.ConvertToJSON("Players.json", player, null);
 
                 // I make a formatted string with all of the information pulled from the Player Class and display it to the user
-                string formattedString = string.Format("Successfully added a Player!\n\nPlayer Details:\nName: {0}\nAge: {1}\nSquad: {2}", player.name, player.age, player.squad);
+                string formattedString = string.Format("Successfully added a Player!\n\nPlayer Details:\nName: {0}\nAge: {1}\nSquad: {2}", player.name, age, player.squad);
                 MessageBox.Show(formattedString);
             }
         }
@@ -211,20 +230,38 @@ namespace SimplyRugby
 
                 foreach (var player in JSON)
                 {
-                    if(players.name == lstDisplay.SelectedItem.ToString())
+                    if(player.name == lstDisplay.SelectedItem.ToString())
                     {
                         // I save the edited information of the player before deleting them
                         // I have to delete the player from the JSON otherwise they will be duplicated
-                        players.name = txtPlayerName.Text;
-                        players.age = Int32.Parse(txtPlayerAge.Text);
-                        players.squad = players.squad;
-                        players.running = players.running;
-                        players.tackling = players.tackling;
-                        players.throwing = players.throwing;
-                        players.passing = players.passing;
-                        players.comments = players.comments;
+                        player.name = txtPlayerName.Text;
+                        player.dob = playerDOB.SelectedDate.Value.Date;
+                        player.phoneNo = Int32.Parse(txtPlayerPhone.Text);
+                        player.sru = Int32.Parse(txtPlayerSRU.Text);
+                        player.email = txtPlayerEmail.Text;
+
+                        player.lastChanged = DateTime.UtcNow;
+                        players.squad = player.squad;
+
+                        players.standard = player.standard;
+                        players.spin = player.spin;
+                        players.pop = player.pop;
+
+                        players.front = player.front;
+                        players.rear = player.rear;
+                        players.side = player.side;
+                        players.scrabble = player.scrabble;
+
+                        players.drop = player.drop;
+                        players.punt = player.punt;
+                        players.grubber = player.grubber;
+                        players.goal = player.goal;
+
+                        players.passingComments = player.passingComments;
+                        players.kickingComments = player.kickingComments;
+                        players.tacklingComments = player.tacklingComments;
+
                         json.DeleteFromJSON(lstDisplay.SelectedItem.ToString(), "Players.json");
-                        MessageBox.Show("Edited Player");
 
                         // This is a bit hacky but basically I removed the old player details from the JSON and am now overwriting the file with the non edited players as to not get any duplicate Players
                         File.WriteAllText("Players.json", "[]");
@@ -232,6 +269,8 @@ namespace SimplyRugby
                         {
                             json.ConvertToJSON("Players.json", thePlayer, null);
                         }
+
+                        MessageBox.Show("Edited Player");
                     }
                 }
             }
@@ -263,28 +302,51 @@ namespace SimplyRugby
         {
             if (playersDisplayed)
             {
+                txtPlayerName.Clear();
+                playerDOB.SelectedDate = new DateTime(1990, 01, 01);
+                txtPlayerSRU.Clear();
+                txtPlayerPhone.Clear();
+                txtPlayerEmail.Clear();
                 dynamic JSON = json.ConvertFromJSON("Players.json");
 
                 foreach(var player in JSON)
                 {
-                    if(player.name == lstDisplay.SelectedItem.ToString())
+                    try
                     {
-                        int age = player.age;
-                        txtPlayerName.Text = player.name;
-                        txtPlayerAge.Text = age.ToString();
+                        if (player.name == lstDisplay.SelectedItem.ToString())
+                        {
+                            txtPlayerName.Text = player.name;
+                            playerDOB.SelectedDate = player.dob;
+                            txtPlayerSRU.Text = player.sru.ToString();
+                            txtPlayerPhone.Text = player.phoneNo.ToString();
+                            txtPlayerEmail.Text = player.email;
+                        }
+                    }
+                    catch
+                    {
+                        return;
                     }
                 }
             }
             else
             {
+                txtCoachName.Clear();
+                txtCoachEmail.Clear();
                 dynamic JSON = json.ConvertFromJSON("Coaches.json");
 
                 foreach (var coach in JSON)
                 {
-                    if (coach.name == lstDisplay.SelectedItem.ToString())
+                    try
                     {
-                        txtCoachName.Text = coach.name;
-                        txtCoachEmail.Text = coach.email;
+                        if (coach.name == lstDisplay.SelectedItem.ToString())
+                        {
+                            txtCoachName.Text = coach.name;
+                            txtCoachEmail.Text = coach.email;
+                        }
+                    }
+                    catch
+                    {
+                        return;
                     }
                 }
             }

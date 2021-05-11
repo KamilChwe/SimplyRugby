@@ -34,13 +34,30 @@ namespace SimplyRugby
                     newList.Add(new Player()
                     {
                         name = playerDetails.name,
-                        age = playerDetails.age,
+                        dob = playerDetails.dob,
+                        email = playerDetails.email,
+                        phoneNo = playerDetails.phoneNo,
+                        sru = playerDetails.sru,
                         squad = playerDetails.squad,
-                        running = playerDetails.running,
-                        tackling = playerDetails.tackling,
-                        passing = playerDetails.passing,
-                        throwing = playerDetails.throwing,
-                        comments = playerDetails.comments
+
+                        lastChanged = playerDetails.lastChanged,
+                        standard = playerDetails.standard,
+                        spin = playerDetails.spin,
+                        pop = playerDetails.pop,
+
+                        front = playerDetails.front,
+                        rear = playerDetails.rear,
+                        side = playerDetails.side,
+                        scrabble = playerDetails.scrabble,
+
+                        drop = playerDetails.drop,
+                        punt = playerDetails.punt,
+                        grubber = playerDetails.grubber,
+                        goal = playerDetails.goal,
+
+                        passingComments = playerDetails.passingComments,
+                        kickingComments = playerDetails.kickingComments,
+                        tacklingComments = playerDetails.tacklingComments
                     });
 
                     // Turns the list into a JSON
@@ -75,13 +92,30 @@ namespace SimplyRugby
                     List.Add(new Player()
                     {
                         name = playerDetails.name,
-                        age = playerDetails.age,
+                        dob = playerDetails.dob,
+                        email = playerDetails.email,
+                        phoneNo = playerDetails.phoneNo,
+                        sru = playerDetails.sru,
                         squad = playerDetails.squad,
-                        running = playerDetails.running,
-                        tackling = playerDetails.tackling,
-                        passing = playerDetails.passing,
-                        throwing = playerDetails.throwing,
-                        comments = playerDetails.comments
+
+                        lastChanged = playerDetails.lastChanged,
+                        standard = playerDetails.standard,
+                        spin = playerDetails.spin,
+                        pop = playerDetails.pop,
+
+                        front = playerDetails.front,
+                        rear = playerDetails.rear,
+                        side = playerDetails.side,
+                        scrabble = playerDetails.scrabble,
+
+                        drop = playerDetails.drop,
+                        punt = playerDetails.punt,
+                        grubber = playerDetails.grubber,
+                        goal = playerDetails.goal,
+
+                        passingComments = playerDetails.passingComments,
+                        kickingComments = playerDetails.kickingComments,
+                        tacklingComments = playerDetails.tacklingComments
                     });
 
                     // Turns the list into a JSON

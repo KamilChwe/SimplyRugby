@@ -54,11 +54,25 @@ namespace SimplyRugby
                 lstDisplay.SelectedItem.ToString();
                 if (player.name == lstDisplay.SelectedItem.ToString())
                 {
-                    txtRunning.Text = player.running.ToString();
-                    txtTackling.Text = player.tackling.ToString();
-                    txtThrowing.Text = player.throwing.ToString();
-                    txtPassing.Text = player.passing.ToString();
-                    txtComment.Text = player.comments.ToString();
+                    txtLastChanged.Text = "Last Changed: " + player.lastChanged.ToString();
+
+                    txtStandard.Text = player.standard.ToString();
+                    txtSpin.Text = player.spin.ToString();
+                    txtPop.Text = player.pop.ToString();
+
+                    txtFront.Text = player.front.ToString();
+                    txtRear.Text = player.rear.ToString();
+                    txtSide.Text = player.side.ToString();
+                    txtScrabble.Text = player.scrabble.ToString();
+
+                    txtDrop.Text = player.drop.ToString();
+                    txtPunt.Text = player.punt.ToString();
+                    txtGrubber.Text = player.grubber.ToString();
+                    txtGoal.Text = player.goal.ToString();
+
+                    txtPassComment.Text = player.passingComments.ToString();
+                    txtTackComment.Text = player.tacklingComments.ToString();
+                    txtKickComment.Text = player.kickingComments.ToString();
                     return;
                 }
                 else
@@ -82,13 +96,29 @@ namespace SimplyRugby
                     // I save the edited information of the player before deleting them
                     // I have to delete the player from the JSON otherwise they will be duplicated
                     players.name = player.name;
-                    players.age = player.age;
+                    players.dob = player.dob;
+                    players.phoneNo = player.phoneNo;
+                    players.email = player.email;
+                    players.lastChanged = DateTime.UtcNow;
                     players.squad = player.squad;
-                    players.running = Int32.Parse(txtRunning.Text);
-                    players.tackling = Int32.Parse(txtTackling.Text);
-                    players.throwing = Int32.Parse(txtThrowing.Text);
-                    players.passing = Int32.Parse(txtPassing.Text);
-                    players.comments = txtComment.Text;
+
+                    players.standard = Int32.Parse(txtStandard.Text);
+                    players.spin = Int32.Parse(txtSpin.Text);
+                    players.pop = Int32.Parse(txtPop.Text);
+
+                    players.front = Int32.Parse(txtFront.Text);
+                    players.rear = Int32.Parse(txtRear.Text);
+                    players.side = Int32.Parse(txtSide.Text);
+                    players.scrabble = Int32.Parse(txtScrabble.Text);
+
+                    players.drop = Int32.Parse(txtDrop.Text);
+                    players.punt = Int32.Parse(txtPunt.Text);
+                    players.grubber = Int32.Parse(txtGrubber.Text);
+                    players.goal = Int32.Parse(txtGoal.Text);
+
+                    players.passingComments = txtPassComment.Text;
+                    players.tacklingComments = txtTackComment.Text;
+                    players.kickingComments = txtKickComment.Text;
                     JSON.Remove(player);
 
                     // This is a bit hacky but basically I removed the old player details from the JSON and am now overwriting the file with the non edited players as to not get any duplicate Players

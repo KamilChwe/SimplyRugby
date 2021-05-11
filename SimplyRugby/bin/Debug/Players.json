@@ -1,22 +1,25 @@
 [
   {
-    "name": "Jolyne",
-    "age": 16,
-    "squad": "Under 18s",
-    "tackling": 0,
-    "passing": 0,
-    "running": 0,
-    "throwing": 0,
-    "comments": ""
-  },
-  {
     "name": "Kamil",
-    "age": 18,
+    "dob": "2002-12-07T00:00:00",
+    "email": "testing@correct.com",
+    "phoneNo": 32423452,
+    "sru": 435435435,
     "squad": "Under 20s",
-    "tackling": 8,
-    "passing": 2,
-    "running": 6,
-    "throwing": 4,
-    "comments": "Very Poggers"
+    "lastChanged": "2021-05-11T00:00:00+01:00",
+    "standard": 0,
+    "spin": 0,
+    "pop": 0,
+    "front": 0,
+    "rear": 0,
+    "side": 0,
+    "scrabble": 0,
+    "drop": 0,
+    "punt": 0,
+    "grubber": 0,
+    "goal": 0,
+    "passingComments": "",
+    "tacklingComments": "",
+    "kickingComments": ""
   }
 ]
